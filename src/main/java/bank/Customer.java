@@ -6,13 +6,21 @@ public class Customer {
   //Customer Fields
   private int ID, accountID;
   private String name, username, password;
-
-  public Customer(int iD, int accountID, String name, String username, String password) {
+  boolean authenticated;
+  
+  public boolean isAuthenticated() {
+    return authenticated;
+  }
+  public void setAuthenticated(boolean authenticated) {
+    this.authenticated = authenticated;
+  }
+  public Customer(int iD, String name, String username, String password, int accountID) {
     ID = iD;
     this.accountID = accountID;
     this.name = name;
     this.username = username;
     this.password = password;
+    this.authenticated= false;
   }
   //Getters and setters
   public int getID() {
